@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import TextForm from "./components/TextForm";
+import Footer  from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar
+        home="textUtilsHome"
+        explore="textUtilsExplore"
+        about="textUtilsAbout"
+      />
+
+      <div className="container my-3" style={{color:"green"}}>
+        <TextForm heading="Enter the text below to check"                                                                                                                                                                                                   />
+      </div>
+
+      <Footer name='Atharva'/>
+
+    </>
   );
 }
 
