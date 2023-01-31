@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-
 function TextForm(props) {
   const handleOnChange = (event) => {
     console.log('on change')
@@ -20,7 +19,27 @@ function TextForm(props) {
   const handlecClick = () => {
     setText('');
   }
+  
+  const countVowels = () => {
+    let cnt = 0;
+    for(let c=0;c<=text.length;c++){
+      if(text.charAt(c).match(/[aeiou]/)){
+        cnt++;
+    setCount(cnt);
+      }
+    }
+  }
+
+
+  const handleSpeak = () => {
+    let utterance = new SpeechSynthesisUtterance(
+      text
+    );
+    speechSynthesis.speak(utterance); 
+  }
+  
   const [text,setText] = useState('Enter text here');
+  const [count,setCount] = useState(0);
   return (
     <>
       <h1>{props.heading}</h1>
@@ -39,15 +58,29 @@ function TextForm(props) {
       <button className="btn btn-danger mx-2" onClick={handleLwClick}>
         Convert Text to lowercase
       </button>
-      <button className="btn btn-success mx-2" onClick={handlecClick}>Clear Text</button>
+      <button className="btn btn-primary" onClick={countVowels}>Count of vowels</button>
+      <button className="btn btn-success mx-2" onClick={handlecClick}>
+        Clear Text
+      </button>
       <div className="container my-3">
-
         <h2>Text Summary</h2>
-        <p>Given text has {text.split(' ').length} words & {text.length} characters</p>
-        <p>Average time to read this text : {0.008*(text.split(' ').length)} Minutes</p>
+        <p>
+          Given text has {text.split(" ").length} words & {text.length}{" "}
+          characters
+        </p>
+        <p>
+          Average time to read this text : {0.008 * text.split(" ").length}{" "}
+          Minutes
+        </p>
 
         <h2>Preview</h2>
         <p>{text}</p>
+
+        <h2>Number of vowels</h2>
+        <p>Number of vowels in a text are : {count}</p>
+
+        <h2>Speak the text</h2>
+        <button className="btn btn-primary" onClick={handleSpeak}>Speak</button>
       </div>
     </>
   );

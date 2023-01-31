@@ -15,7 +15,7 @@ Footer.propTypes = {
 }
 
 Footer.defaultProps = {
-    name : 'Atharv',
+    name : 'Atharva',
 }
 
 export default Footer;
