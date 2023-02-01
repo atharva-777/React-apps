@@ -12,7 +12,7 @@ function Navbar(props) {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}` }
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
         style={myStyle}
       >
         <div className="container-fluid">
@@ -49,22 +49,47 @@ function Navbar(props) {
               </li>
             </ul>
 
-            <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-  <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
-  <label className="form-check-label mx-3" for="flexSwitchCheckDefault">Change Mode</label>
-</div>
-           
-            <form className="d-flex">
+            <div
+              className={`form-check form-switch text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+            >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+                onClick={props.toggleMode}
+              />
+              <label
+                className="form-check-label mx-3"
+                for="flexSwitchCheckDefault"
+              >
+                Change Mode
+              </label>
+            </div>
+
+            {/* <form className="d-flex">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                style={{
+                  backgroundColor: props.mode === "light" ? "white" : "#212529",
+                  color: props.mode === "light" ? "light" : "dark",
+                }}
+                // style={props.mode==='light'?{backgroundColor:'dark'}:{backgroundColor:'light'}}
               />
-              <button className="btn btn-outline-danger" type="submit">
+              <button
+                className={`btn btn-outline-${
+                  props.mode === "light" ? "dark" : "light"
+                }`}
+                type="submit"
+              >
                 Search
               </button>
-            </form>
+            </form> */}
+
           </div>
         </div>
       </nav>

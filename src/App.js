@@ -10,19 +10,19 @@ function App() {
   const [mode,setMode] = useState('light');
   const toggleMode = () => {
     if(mode==='light'){
-      document.body.style.backgroundColor = 'dark'
+      document.body.style.backgroundColor = "#212529";
       setMode("dark");
     }else{
       setMode("light");
-      document.body.style.backgroundColor = "light";
+      document.body.style.backgroundColor = "white";
     }
   };
   return (
     <>
       <Navbar mode={mode} home="Text Utils" explore="Contact us" about="About us" toggleMode={toggleMode} />
 
-      <div className="container my-3" style={{ background: "white" }}>
-        <TextForm heading="Enter the text below"/>
+      <div className="container my-3" >
+        <TextForm heading="Enter the text below" mode={mode}/>
         {/* <About /> */}
       </div>
     </>
