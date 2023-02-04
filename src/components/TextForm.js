@@ -7,20 +7,24 @@ function TextForm(props) {
     setText(event.target.value);
   }
   const handleUpClick = () => {
+    props.showAlert('Text converted to UPPERCASE','success');
     console.log('uppercase clicked'+text)
     let newText = text.toUpperCase();
     console.log(newText)
     setText(newText);
   }
   const handleLwClick = () => {
+    props.showAlert("Text converted to lowercase", "danger");
     let newText = text.toLowerCase();
     setText(newText);
   }
   const handlecClick = () => {
+    props.showAlert("Text cleared", "danger");
     setText('');
   }
   
   const countVowels = () => {
+    props.showAlert("Vowels has been counted plz check-out", "warning");
     let cnt = 0;
     for(let c=0;c<=text.length;c++){
       if(text.charAt(c).match(/[aeiou]/)){
