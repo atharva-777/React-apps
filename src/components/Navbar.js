@@ -39,7 +39,7 @@ function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav-link" to="/contact">
                   {props.explore}
                 </Link>
               </li>
@@ -63,11 +63,13 @@ function Navbar(props) {
               />
               <label
                 className="form-check-label mx-3"
-                htmlFor="flexSwitchCheckDefault" 
+                htmlFor="flexSwitchCheckDefault"
               >
                 Change Mode
               </label>
             </div>
+
+            
 
             {/* <form className="d-flex">
               <input
@@ -90,7 +92,6 @@ function Navbar(props) {
                 Search
               </button>
             </form> */}
-
           </div>
         </div>
       </nav>
