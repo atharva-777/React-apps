@@ -57,11 +57,11 @@ function App() {
       </div> */}
 
       <Routes>
-          <Route exact path="/About" element={<About />}>
+          <Route exact path="/About" element={<About mode={mode}/>}>
             {/* <About /> */}
           </Route>
 
-          <Route exact path='/contact' element={<Contact/>}></Route>
+          <Route exact path='/contact' element={<Contact mode={mode}/>}></Route>
 
         <Route
           exact
